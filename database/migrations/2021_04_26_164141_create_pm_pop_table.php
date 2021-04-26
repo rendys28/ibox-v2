@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssetGroupsTable extends Migration
+class CreatePmPopTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAssetGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('asset_groups', function (Blueprint $table) {
+        Schema::create('pm_pop', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('asset_group_name')->nullable();
-            });
+            $table->string('pm_pop_name')->nullable();
+        });
     }
 
     /**
@@ -27,6 +27,6 @@ class CreateAssetGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('asset_groups');
+        Schema::dropIfExists('pm_pop');
     }
 }
